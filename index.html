@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fondation Tighremt — Pour le Développement du Haut Atlas</title>
+    <meta name="description" content="La Fondation Tighremt soutient le développement durable dans la région du Haut Atlas : scolarité, électrification, agriculture, emploi et eau potable.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #C1272D; /* Rouge Maroc */
+            --secondary: #006233; /* Vert Maroc */
+            --terracotta: #D2691E;
+            --sand: #F4E4C1;
+            --dark: #2C3E50;
+            --light: #FAFAFA;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(193, 39, 45, 0.95) 0%, rgba(0, 98, 51, 0.95) 100%),
+                        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1920') center/cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 L100 50 L50 100 L0 50 Z" fill="rgba(255,255,255,0.03)"/></svg>') repeat;
+            opacity: 0.1;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            z-index: 1;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 4px 8px rgba(0,0,0,0.3);
+            letter-spacing: -1px;
+        }
+        
+        .hero .tagline {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+        
+        .hero .cta {
+            display: inline-block;
+            padding: 18px 45px;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .hero .cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+        
+        /* Section commune */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        section h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        section .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Mission */
+        .mission {
+            background: linear-gradient(135deg, var(--sand) 0%, var(--light) 100%);
+        }
+        
+        .mission-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .mission-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .mission-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        /* Priorités */
+        .priorities {
+            background: white;
+        }
+        
+        .priority-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .priority-item {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--sand) 0%, white 100%);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+        
+        .priority-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(193, 39, 45, 0.2);
+        }
+        
+        .priority-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .priority-item h3 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .priority-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        /* Impact Stats */
+        .impact {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .impact h2 {
+            color: white;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-item {
+            padding: 2rem;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Contact */
+        .contact {
+            background: var(--sand);
+            text-align: center;
+        }
+        
+        .contact-content {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .contact-info {
+            margin: 2rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.95rem;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            section {
+                padding: 3rem 1.5rem;
+            }
+            
+            .mission-content, .priority-grid, .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Fondation Tighremt</h1>
+            <p class="tagline">Pour un développement durable dans le Haut Atlas marocain</p>
+            <a href="#contact" class="cta">Nous Contacter</a>
+        </div>
+    </section>
+    
+    <!-- Mission -->
+    <section class="mission" id="mission">
+        <h2>Notre Mission</h2>
+        <p class="subtitle">
+            Soutenir le développement économique et social des communautés rurales 
+            du Haut Atlas à travers des actions concrètes et durables.
+        </p>
+        
+        <div class="mission-content">
+            <div class="mission-card">
+                <h3>🌱 Vision</h3>
+                <p>
+                    Une région du Dadès prospère où chaque habitant a accès aux 
+                    ressources essentielles : éducation, énergie, eau, emploi et 
+                    autonomie alimentaire.
+                </p>
+            </div>
+            
+            <div class="mission-card">
+                <h3>🤝 Valeurs</h3>
+                <p>
+                    <strong>Ancrage local</strong> : Priorité aux besoins identifiés par les communautés.<br>
+                    <strong>Durabilité</strong> : Solutions pérennes, économiquement viables.<br>
+                    <strong>Transparence</strong> : Reporting annuel public de l'impact.
+                </p>
+            </div>
+            
+            <div class="mission-card">
+                <h3>💰 Engagement</h3>
+                <p>
+                    1% des revenus du projet TIGREMT (énergie solaire + agrivoltaïsme) 
+                    redistribués chaque année aux associations locales partenaires.
+                    <br><br>
+                    <strong>Soit €1,300 à €6,900/an</strong> selon la phase du projet.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Priorités -->
+    <section class="priorities" id="priorities">
+        <h2>Nos Priorités</h2>
+        <p class="subtitle">
+            Cinq axes d'intervention pour un impact territorial concret
+        </p>
+        
+        <div class="priority-grid">
+            <div class="priority-item">
+                <div class="priority-icon">📚</div>
+                <h3>Scolarité & Éducation</h3>
+                <p>Fournitures scolaires, bourses d'études, soutien scolaire, bibliothèques</p>
+            </div>
+            
+            <div class="priority-item">
+                <div class="priority-icon">💡</div>
+                <h3>Électrification Rurale</h3>
+                <p>Accès à l'énergie solaire, équipements domestiques, infrastructures électriques</p>
+            </div>
+            
+            <div class="priority-item">
+                <div class="priority-icon">🌾</div>
+                <h3>Agriculture & Autonomie</h3>
+                <p>Semences, irrigation, formation agricole, coopératives, distillation</p>
+            </div>
+            
+            <div class="priority-item">
+                <div class="priority-icon">💼</div>
+                <h3>Emploi & Formation</h3>
+                <p>Formation professionnelle, insertion, entrepreneuriat, artisanat local</p>
+            </div>
+            
+            <div class="priority-item">
+                <div class="priority-icon">💧</div>
+                <h3>Eau Potable & Infrastructures</h3>
+                <p>Points d'eau, puits, châteaux d'eau, assainissement, routes</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Impact -->
+    <section class="impact" id="impact">
+        <h2>Notre Impact Visé</h2>
+        <p class="subtitle" style="color: rgba(255,255,255,0.9);">
+            Objectifs à 10 ans (2026-2036)
+        </p>
+        
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">120+</span>
+                <span class="stat-label">Foyers électrifiés</span>
+            </div>
+            
+            <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Emplois locaux créés</span>
+            </div>
+            
+            <div class="stat-item">
+                <span class="stat-number">€50k+</span>
+                <span class="stat-label">Redistribués sur 10 ans</span>
+            </div>
+            
+            <div class="stat-item">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Associations partenaires</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2>Nous Contacter</h2>
+        <p class="subtitle">
+            Pour tout partenariat, projet ou information complémentaire
+        </p>
+        
+        <div class="contact-content">
+            <h3 style="color: var(--primary); margin-bottom: 2rem;">Fondation Tighremt</h3>
+            
+            <div class="contact-info">
+                <p style="margin-bottom: 1rem;">
+                    <strong>Région :</strong><br>
+                    Vallée du Dadès, Haut Atlas<br>
+                    Tinghir / Boumalne Dadès, Maroc
+                </p>
+                
+                <p style="margin-bottom: 1rem;">
+                    <strong>Email :</strong><br>
+                    <a href="mailto:tallalwassim131@gmail.com">tallalwassim131@gmail.com</a>
+                </p>
+                
+                <p>
+                    <strong>Téléphone :</strong><br>
+                    <a href="tel:+33761137032">+33 7 61 13 70 32</a>
+                </p>
+            </div>
+            
+            <p style="margin-top: 2rem; font-size: 0.95rem; color: #666;">
+                Fondation en cours de création • Soutenue par le projet TIGREMT Mining<br>
+                Partenaires : Shamsiyah (Casablanca), StartMining
+            </p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>
+            © 2026 Fondation Tighremt • En partenariat avec 
+            <a href="https://github.com/Wasslamenace/fondation-tighremt" target="_blank">Projet TIGREMT</a>
+        </p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.8;">
+            Développement durable • Ancrage territorial • Transparence
+        </p>
+    </footer>
+</body>
+</html>
