@@ -30,8 +30,8 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(193, 39, 45, 0.95) 0%, rgba(0, 98, 51, 0.95) 100%),
-                        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1920') center/cover;
+            background: linear-gradient(135deg, rgba(193, 39, 45, 0.85) 0%, rgba(0, 98, 51, 0.85) 100%),
+                        url('https://images.unsplash.com/photo-1541647249-7ecbb42d62c0?w=1920&q=80') center/cover;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -285,7 +285,7 @@
     <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Fondation Tighremt</h1>
+            <img src="assets/logo.svg" alt="Fondation Tighremt" style="max-width: 400px; width: 90%; margin-bottom: 2rem; filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));">
             <p class="tagline">Pour un développement durable dans le Haut Atlas marocain</p>
             <a href="#contact" class="cta">Nous Contacter</a>
         </div>
@@ -367,6 +367,38 @@
                 <h3>Eau Potable & Infrastructures</h3>
                 <p>Points d'eau, puits, châteaux d'eau, assainissement, routes</p>
             </div>
+        </div>
+    </section>
+    
+    <!-- Projet TIGREMT -->
+    <section style="background: white; padding: 4rem 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; color: var(--primary); margin-bottom: 1rem;">Soutenu par le Projet TIGREMT</h2>
+            <p style="text-align: center; color: #666; font-size: 1.1rem; max-width: 800px; margin: 0 auto 3rem;">
+                La Fondation Tighremt est financée par 1% des revenus du projet TIGREMT Mining, 
+                une initiative d'énergie renouvelable et d'agrivoltaïsme dans la région.
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <div style="background: linear-gradient(135deg, var(--sand) 0%, white 100%); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--primary);">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.3rem;">⚡ Énergie</h3>
+                    <p style="color: #666;">Centrale solaire off-grid 1-10 MW valorisant l'énergie excédentaire</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, var(--sand) 0%, white 100%); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--secondary);">
+                    <h3 style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.3rem;">🌱 Agrivoltaïsme</h3>
+                    <p style="color: #666;">Culture roses damascena + herbes aromatiques entre panneaux solaires</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, var(--sand) 0%, white 100%); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--terracotta);">
+                    <h3 style="color: var(--terracotta); margin-bottom: 1rem; font-size: 1.3rem;">💼 Emploi</h3>
+                    <p style="color: #666;">5-10 emplois permanents + 20-30 saisonniers (priorité femmes rurales)</p>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem; color: #999; font-size: 0.95rem;">
+                <strong style="color: var(--primary);">Partenaires</strong> : Shamsiyah (Casablanca) • StartMining (expertise technique)
+            </p>
         </div>
     </section>
     

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <!-- Background avec motif marocain subtil -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C1272D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#006233;stop-opacity:1" />
+    </linearGradient>
+    
+    <pattern id="moroccan" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M10 0 L15 10 L10 20 L5 10 Z" fill="rgba(255,255,255,0.05)"/>
+    </pattern>
+  </defs>
+  
+  <!-- Motif background -->
+  <rect x="0" y="0" width="400" height="120" fill="url(#moroccan)"/>
+  
+  <!-- Montagne stylisée (Haut Atlas) -->
+  <path d="M 30 80 L 50 40 L 70 80 Z" fill="#C1272D" opacity="0.8"/>
+  <path d="M 50 80 L 70 50 L 90 80 Z" fill="#006233" opacity="0.8"/>
+  
+  <!-- Texte TIGHREMT -->
+  <text x="110" y="55" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800" fill="url(#grad1)">
+    TIGHREMT
+  </text>
+  
+  <!-- Sous-titre Fondation -->
+  <text x="110" y="80" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#2C3E50">
+    F O N D A T I O N
+  </text>
+  
+  <!-- Ligne décorative -->
+  <line x1="110" y1="85" x2="280" y2="85" stroke="url(#grad1)" stroke-width="2"/>
+  
+  <!-- Tagline -->
+  <text x="110" y="100" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="300" fill="#666">
+    Développement Durable • Haut Atlas
+  </text>
+</svg>
